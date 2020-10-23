@@ -1,0 +1,20 @@
+<% @users_invites.each do |user| %>
+<li>
+  Name: <%= user.name %>
+  
+  <span class="profile-link">
+    <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+    
+    <%= button_to  "Decline Request", decline_friendship_friendships_path, 
+      params: {:friendship => {:user_id => user.id, :friend_id=> current_user.id} }, 
+    method: :post, data: { confirm: 'Are you sure?' } %>
+
+      <%= button_to  "Accept Request", accept_friendship_friendships_path, 
+      params: {:friendship => {:user_id => user.id, :friend_id=> current_user.id} }, 
+      method: :post, data: { confirm: 'Are you sure?' } %>
+  
+  </span>
+
+</li>
+
+<% end %>

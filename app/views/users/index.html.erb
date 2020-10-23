@@ -1,5 +1,9 @@
 <section class="users-section">
   <ul class="users-list">
-    <%= render @users %>
+
+    <%= render 'user_unrequested' %>
+    <%= render 'user_requested' %>
+    <%= render 'user_invites' %>
+    <%= render 'user_friends'%>
   </ul>
 </section>
