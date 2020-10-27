@@ -10,12 +10,11 @@ class UsersController < ApplicationController
     lists_of_users
   end
 
-  # rubocop:disable Style/GuardClause
   def lists_of_users
     @users.each do |user|
-      if user.id == current_user.id
-        next
-      elsif current_user.friendships.where(friend_id: user.id, status: false).exists?
+      next if user.id == current_user.id
+
+      if current_user.friendships.where(friend_id: user.id, status: false).exists?
         @users_requested << user
       elsif user.friendships.where(friend_id: current_user.id, status: false).exists?
         @users_invites << user
@@ -26,7 +25,6 @@ class UsersController < ApplicationController
       end
     end
   end
-  # rubocop:enable Style/GuardClause
 
   def show
     @user = User.find(params[:id])
