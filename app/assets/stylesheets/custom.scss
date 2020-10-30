@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap');
 
-$primary-color-dark: #004c4c;
+$primary-color-dark: #006666;
 $primary-color: #008080;
 $primary-color-light: #e1ffff;
 $primary-color-text: #212121;
@@ -94,8 +94,9 @@ a {
 }
 
 .errors {
-  font-size: 10px;
+  font-size: 12px;
   color: red;
+  margin-bottom: 10px;
 }
 
 .new_post,
@@ -114,7 +115,7 @@ a {
     border: 1px solid $divider-color;
     height: 64px;
     padding: 8px;
-    margin: 4px 0;
+    margin: 20px 0;
     border-radius: 4px;
   }
 
@@ -168,7 +169,7 @@ form {
   }
 
   input[type='submit'] {
-    padding: 8px;
+    padding: 12px;
     width: 50%;
     border: none;
     border-radius: 4px;
