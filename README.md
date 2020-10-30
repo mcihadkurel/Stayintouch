@@ -1,6 +1,10 @@
-# Scaffold for social media app with Ruby on Rails
+# Stay In Touch
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+### Milestone 1
+
+> In this milestone we have created an entity relationship diagram (ERD) for our project.
+
+![image](docs/diagram.png)
 
 ## Built With
 
@@ -10,7 +14,6 @@
 ## Live Demo
 
 TBA
-
 
 ## Getting Started
 
@@ -46,7 +49,6 @@ To make sure the linters' checks using Github Actions work properly, you should 
 3. Start working on your milestone as usual.
 4. Open a PR from the `feature/branch` when your work is done.
 
-
 ### Usage
 
 Start server with:
@@ -63,7 +65,7 @@ Open `http://localhost:3000/` in your browser.
     rpsec --format documentation
 ```
 
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
+> Tests will be added in other milestones. There are no tests for initial features.
 
 ### Deployment
 
@@ -71,7 +73,17 @@ TBA
 
 ## Authors
 
-TBA
+👤 **Muhammed Cihad Kurel**
+
+- Github: [@mcihadkurel](https://github.com/mcihadkurel)
+- Twitter: [@mece_ka](https://twitter.com/mece_ka)
+- LinkedIn: [@muhammed](https://www.linkedin.com/in/muhammed-cihad-8187581a8/)
+
+👤 **Amita Roy**
+
+- Github: [@Amita](https://github.com/Amita-Roy)
+- Twitter: [@Amita](https://twitter.com/AmitaRoy14)
+- Linkedin: [@Amita](https://www.linkedin.com/in/amita-roy-3b823b68/)
 
 ## 🤝 Contributing
 
@@ -90,4 +102,3 @@ TBA
 ## 📝 License
 
 TBA
-
