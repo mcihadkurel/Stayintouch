@@ -67,11 +67,18 @@ Open `http://localhost:3000/` in your browser.
 
 ### Deployment
 
-TBA
+1. Create an account in heroku;
+2. Inside the project folder run `heroku create`
+3. Push the code to heroku `git push heroku main`
+4. Migrate your database `heroku run rake db:migrate`
+5. Visit your application `heroku open`
 
 ## Authors
 
-TBA
+### 👨‍💻 Diego Lira
+[![GitHub](https://img.shields.io/badge/-GitHub-000?style=for-the-badge&logo=GitHub&logoColor=white)](https://github.com/lirad) <br>
+[![LINKEDIN](https://img.shields.io/badge/-LINKEDIN-0077B5?style=for-the-badge&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/diegoalira/) <br>
+[![EMAIL](https://img.shields.io/badge/-EMAIL-D14836?style=for-the-badge&logo=Mail.Ru&logoColor=white)](mailto:diegoalira@gmail.com) <br>
 
 ## 🤝 Contributing
 
@@ -79,15 +86,10 @@ Contributions, issues and feature requests are welcome!
 
 Feel free to check the [issues page](issues/).
 
-## Show your support
+### Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
+### License
 
-TBA
-
-## 📝 License
-
-TBA
-
+![Cocoapods](https://img.shields.io/cocoapods/l/AFNetworking?color=red&style=for-the-badge)
