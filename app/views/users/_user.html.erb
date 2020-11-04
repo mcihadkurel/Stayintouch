@@ -1,8 +1,20 @@
-<li>
-  Name: <%= user.name %>
-  <span class="profile-link">
-    <%= link_to "See Profile", user_path(user), class: "profile-link" %>
+<% if user != current_user %>
+  <li class="mt-4">
+    Name: <%= user.name %>
+    <span class="profile-link">
+      <%= link_to "See Profile", user_path(user), class: "profile-link" %>
 
 
-  </span>
-</li>
+    </span>
+
+      <div class="mt-4">
+        <% if is_friend?(current_user, user) %>
+          <%= link_to "Remove Friend", friendship_path, class: ["btn", "btn-secondary"], method: :delete %>
+        <% else %>
+          <%= link_to "Add Friend", friendships_path(friend_id: user.id), class: ["btn", "btn-primary"], method: :post %>
+        <% end %>
+        
+      </div>
+
+  </li> 
+<% end %>
