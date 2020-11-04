@@ -1,5 +1,6 @@
 <% if user != current_user %>
   <li class="mt-4">
+
     Name: <%= user.name %>
     <span class="profile-link">
       <%= link_to "See Profile", user_path(user), class: "profile-link" %>
