@@ -6,8 +6,9 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    @friendship = Friendship.find(params[:id])
-    @friendship.destroy
+    @friendship = current_user.friendships.where(friend_id: params[:id])
+    current_user.friendships.delete(@friendship)
+
     redirect_to users_path, notice: 'You have unfriended the user successfully'
   end
 end
