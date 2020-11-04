@@ -10,8 +10,16 @@
   
   <h3>Friends</h3>
 
-    <% @user.friends & @user.friends.each do |friend| %>
-      <p class="mt-4"><%= friend.name %></p>
+
+    <h3>Pending requests</h3>
+    <% @pending_requests & @pending_requests.each do |r| %>
+      <div class="mt-4">
+        <p><%= r.friend.name %></p>
+        <div class="mt-4">
+          <%= link_to "Accept", friendship_path, class: ["btn", "btn-primary"], method: :patch %>
+          <%= link_to "Reject", friendship_path, class: ["btn", "btn-secondary"], method: :delete %>
+        </div>
+      </div>
     <% end %>
   
 </section>

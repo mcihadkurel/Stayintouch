@@ -18,7 +18,7 @@ class Friendship < ApplicationRecord
   # end
 
   after_create do |f|
-    Friendship.create!(user_id: f.friend_id, friend_id: f.user_id) unless Friendship.where(friend_id: f.user_id).first
+    Friendship.create!(user_id: f.friend_id, friend_id: f.user_id, confirmed: false) unless Friendship.where(friend_id: f.user_id).first
   end
 
   after_destroy do |f|
