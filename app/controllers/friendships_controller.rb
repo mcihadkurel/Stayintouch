@@ -8,7 +8,7 @@ class FriendshipsController < ApplicationController
   end
 
   def update
-    @friendship = Friendship.where(user_id: params[:id], confirmed: false)
+    @friendship = Friendship.where(user_id: current_user.id, friend_id: params[:id], confirmed: false)
     @friendship.update(confirmed: true)
     redirect_to current_user
   end
