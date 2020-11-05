@@ -10,8 +10,9 @@
     </span>
 
       <div class="mt-4">
-        <% if is_friend?(current_user, user) %>
+        <% if is_friend?(current_user, user)%>
           <%= link_to "Unfriend", friendship_path(user), class: ["btn", "btn-secondary"], method: :delete %>
+
         <% else %>
           <%= link_to "Add Friend", friendships_path(friend_id: user.id), class: ["btn", "btn-primary"], method: :post %>
         <% end %>
