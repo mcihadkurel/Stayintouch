@@ -4,4 +4,8 @@ module FriendshipsHelper
   def is_friend?(user1, user2)
     user1.friends.include?(user2)
   end
+
+  def friends(user)
+    user.friendships.select(&:confirmed)
+  end
 end

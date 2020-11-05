@@ -9,17 +9,21 @@
   </article>
   
   <h3>Friends</h3>
+  <% friends(@user) & friends(@user).each do |f| %>
+    <%= f.friend.name %>
+  <% end %>
 
-
-    <h3>Pending requests</h3>
-    <% @pending_requests & @pending_requests.each do |r| %>
-      <div class="mt-4">
-        <p><%= r.friend.name %></p>
+    <% if current_user == @user %>
+    <h3 class="mt-4">Pending requests</h3>
+      <% @pending_requests & @pending_requests.each do |r| %>
         <div class="mt-4">
-          <%= link_to "Accept", friendship_path, class: ["btn", "btn-primary"], method: :patch %>
-          <%= link_to "Reject", friendship_path, class: ["btn", "btn-secondary"], method: :delete %>
+          <p><%= r.friend.name %></p>
+          <div class="mt-4">
+            <%= link_to "Accept", friendship_path, class: ["btn", "btn-primary"], method: :patch %>
+            <%= link_to "Reject", friendship_path, class: ["btn", "btn-secondary"], method: :delete %>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   
 </section>

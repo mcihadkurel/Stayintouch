@@ -10,14 +10,11 @@ class FriendshipsController < ApplicationController
   def update
     @friendship = Friendship.where(user_id: params[:id], confirmed: false)
     @friendship.update(confirmed: true)
-    redirect_to users_path
+    redirect_to current_user
   end
 
   def destroy
-    # friendship = current_user.friendships.where(friend_id: params[:id])
     Friendship.where(friend_id: params[:id], user_id: current_user.id).first.destroy
-    # current_user.friendships.delete(@friendship)
-
-    redirect_to users_path, notice: 'You have unfriended the user successfully'
+    redirect_to users_path, notice: 'You have unfriended the friend successfully'
   end
 end
