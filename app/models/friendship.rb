@@ -18,7 +18,9 @@ class Friendship < ApplicationRecord
   # end
 
   after_create do |f|
-    Friendship.create!(user_id: f.friend_id, friend_id: f.user_id, confirmed: false) unless Friendship.where(friend_id: f.user_id).first
+    if !Friendship.where(user_id: f.friend_id, friend_id: f.user_id).first # rubocop:disable Style/NegatedIf
+      Friendship.create!(user_id: f.friend_id, friend_id: f.user_id, confirmed: false)
+    end
   end
 
   after_destroy do |f|
