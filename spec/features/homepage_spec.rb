@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe 'navigate' do
-
   before(:each) do
     @user = FactoryBot.create(:user)
     login_as(@user, scope: :user)

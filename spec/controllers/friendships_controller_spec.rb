@@ -1,11 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe 'User', type: :request do
+RSpec.describe 'Friendship', type: :request do
   describe 'request list of all users' do
     before(:each) do
       @user = FactoryBot.create(:user)
       login_as(@user, scope: :user)
     end
+
     it 'get the user on users page' do
       user = @user
       get '/users'

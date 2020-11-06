@@ -3,17 +3,16 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'creation' do
     before do
-      @user = User.create(email: "test@test.com", password: "password", password_confirmation: "password", name: "Jon")
+      @user = FactoryBot.create(:user)
     end
 
     it 'should be able to be created if valid' do
       expect(@user).to be_valid
     end
-
   end
 
   context 'validation test' do
-    let(:user) { User.create(email: "test@test.com", password: "password", password_confirmation: "password", name: "Jon") } 
+    let(:user) { FactoryBot.create(:second_user) }
     it 'ensure name is present' do
       user.name = nil
       expect(user.save).to eq(false)

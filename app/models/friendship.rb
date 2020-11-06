@@ -1,10 +1,6 @@
 class Friendship < ApplicationRecord
-  
-
   belongs_to :user
   belongs_to :friend, class_name: 'User'
-
-  
 
   after_create do |f|
     if !Friendship.where(user_id: f.friend_id, friend_id: f.user_id).first # rubocop:disable Style/NegatedIf
