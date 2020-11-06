@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
 
+  
+
     context 'validation test' do
         let(:post) { Post.create(content: "Hello there, this is my first post") } 
         it 'ensure name is present' do
