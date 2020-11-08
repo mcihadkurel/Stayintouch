@@ -1,47 +1,27 @@
-# require 'rails_helper'
+require 'rails_helper'
 
-# RSpec.describe Friendship, type: :model do
-#   describe 'creation' do
-#     before do
+RSpec.describe Friendship, type: :model do
+  describe 'creation' do
+    before do
+      @user1 = FactoryBot.create(:user)
+      @user2 = FactoryBot.create(:second_user)
+      @friendship = Friendship.create(user: @user1, friend: @user2, confirmed: true)
+    end
 
-#         @user1 = FactoryBot.create(:user)
-#         @user2 = FactoryBot.create(:second_user)
-#     end
+    it 'should be able to be created if valid' do
+      expect(@friendship).to be_valid
+    end
 
-#     it 'should be able to be created if valid' do
-#       expect(@user).to be_valid
-#     end
+    it 'increased the count of friendships' do
+      Friendship.create(user: @user1, friend: @user2, confirmed: true)
+      expect(Friendship.count).to eq 3
+    end
+  end
 
-#   end
-
-#   context 'validation test' do
-#     let(:user) { User.create(email: "test@test.com", password: "password", password_confirmation: "password", name: "Jon") }
-#     it 'ensure name is present' do
-#       user.name = nil
-#       expect(user.save).to eq(false)
-#     end
-#   end
-#   context 'associations' do
-#     it 'should have many posts' do
-#       t = User.reflect_on_association(:posts)
-#       expect(t.macro).to eq(:has_many)
-#     end
-
-#     it 'should have many comments' do
-#       t = User.reflect_on_association(:comments)
-#       expect(t.macro).to eq(:has_many)
-#     end
-#     it 'should have many likes' do
-#       t = User.reflect_on_association(:likes)
-#       expect(t.macro).to eq(:has_many)
-#     end
-#     it 'should have many friendships' do
-#       t = User.reflect_on_association(:friendships)
-#       expect(t.macro).to eq(:has_many)
-#     end
-#     it 'should have many friends' do
-#       t = User.reflect_on_association(:friends)
-#       expect(t.macro).to eq(:has_many)
-#     end
-#   end
-# end
+  context 'associations' do
+    it 'should belongs to user' do
+      t = Friendship.reflect_on_association(:user)
+      expect(t.macro).to eq(:belongs_to)
+    end
+  end
+end
