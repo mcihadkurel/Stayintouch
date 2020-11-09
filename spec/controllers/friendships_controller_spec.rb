@@ -14,5 +14,12 @@ RSpec.describe 'Friendship', type: :request do
             expect(response.body).to include('Dodo')
           end
         end
+
+        context 'if user not logged in' do
+            it 'redirects to sign in' do
+              get posts_url
+              redirect_to new_user_session_url
+            end
+          end
     
 end
