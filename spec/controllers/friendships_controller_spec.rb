@@ -6,5 +6,13 @@ RSpec.describe 'Friendship', type: :request do
           @user = FactoryBot.create(:user)
           login_as(@user, scope: :user)
         end
+
+        it 'get the user on users page' do
+            user = @user
+            get users_url
+            expect(response).to be_successful
+            expect(response.body).to include('Dodo')
+          end
+        end
     
 end
