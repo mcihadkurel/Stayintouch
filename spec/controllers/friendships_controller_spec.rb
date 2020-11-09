@@ -21,5 +21,12 @@ RSpec.describe 'Friendship', type: :request do
               redirect_to new_user_session_url
             end
           end
+
+          describe 'POST #Create' do
+            before(:each) do
+              @user = FactoryBot.create(:user)
+              @user2 = FactoryBot.create(:second_user)
+              login_as(@user, scope: :user)
+            end
     
 end
