@@ -28,5 +28,11 @@ RSpec.describe 'Friendship', type: :request do
               @user2 = FactoryBot.create(:second_user)
               login_as(@user, scope: :user)
             end
+
+            it 'create friendship' do
+                post friendships_url, params: { friendship: { user: @user, friend: @user2, confirmed: true } }
+                redirect_to users_path
+              end
+            end
     
 end
