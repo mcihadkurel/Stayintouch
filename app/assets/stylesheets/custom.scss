@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap');
 
-$primary-color-dark: #006666;
+$primary-color-dark: #066;
 $primary-color: #008080;
 $primary-color-light: #e1ffff;
 $primary-color-text: #212121;
@@ -158,7 +158,7 @@ form {
     }
 
     input[type='checkbox'] {
-      width: fit-content;
+      width: auto;
     }
   }
 

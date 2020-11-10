@@ -1,15 +1,32 @@
 # Stay In Touch
 
-### Milestone 1
+### Milestone 2
 
-> In this milestone we have created an entity relationship diagram (ERD) for our project.
+> In this milestone we have created a friendship model and association between user and friend. Both user and friend referencing to same model (User).
 
-![image](docs/diagram.png)
+> User can send the friend request
+
+> user can accept and reject the friend request
+
+> Current_user can see his/her pending requests
+
+> User can unfriend the friend
+
+> Added test
+
+![screenshot](./app/assets/images/ss1.png)
+![screenshot](./app/assets/images/ss2.png)
+![screenshot](./app/assets/images/ss3.png)
+![screenshot](./app/assets/images/ss4.png)
+![screenshot](./app/assets/images/ss5.png)
 
 ## Built With
 
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
+- Rspec
+- Capybara
+- rubocop
 
 ## Live Demo
 
@@ -61,11 +78,15 @@ Open `http://localhost:3000/` in your browser.
 
 ### Run tests
 
+> for test formatting add below script in .rspec file
+
 ```
     rpsec --format documentation
 ```
 
-> Tests will be added in other milestones. There are no tests for initial features.
+> To run all the tests run below script in the terminal
+
+`rspec`
 
 ### Deployment
 

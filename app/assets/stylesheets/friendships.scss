@@ -1,0 +1,28 @@
+// Place all the styles related to the friendships controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$primary-color-dark: #066;
+$primary-color: #008080;
+$primary-color-light: #e1ffff;
+$primary-color-text: #212121;
+$divider-color: #bdbdbd;
+
+.btn {
+  padding: 8px 15px;
+  border-radius: 4px;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: rgb(255, 47, 99);
+}
+
+.btn-primary {
+  background-color: $primary-color;
+}
+
+// margin
+
+.mt-4 {
+  margin-top: 20px;
+}
