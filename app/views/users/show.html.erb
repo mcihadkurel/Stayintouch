@@ -8,31 +8,26 @@
     </ul>
   </article>
 
-   <%if @user != current_user%>
+   <% if @user != current_user %>
 
-     <div class="mt-4">
-       
-        <% if are_friends?(current_user, @user) %>
+    <% if requestSent(current_user, @user) %>
+            <%= link_to "Accept", friendship_path(@user.id), class: ["btn", "btn-primary"], method: :patch %>
+            <%= link_to "Reject", friendship_path(@user.id), class: ["btn", "btn-primary"], method: :delete %>
+        <% elsif requestConfirmed(current_user, @user) %>
           <%= link_to "Unfriend", friendship_path(@user), class: ["btn", "btn-secondary"], method: :delete %>
-          
+        <% elsif requestPending(current_user, @user) %>
+          <%= content_tag(:p, "pending acceptance") %>
         <% else %>
           <%= link_to "Add Friend", friendships_path(friend_id: @user.id), class: ["btn", "btn-primary"], method: :post %>
         <% end %>
-        
-      </div>
-      <%end%>
+    <% end %>
   
   <h3 class="mt-4" >Friends</h3>
   <% friends(@user) & friends(@user).each do |f| %>
     <%= f.friend.name %>
   <% end %>
 
-  <h3 class="mt-4" >Mutual Friends</h3>
-  <% if current_user != @user %>
-    <% mutual_friends(current_user, @user) & mutual_friends(current_user, @user).each do |f| %>
-      <p><%= f.name %></p>
-    <% end %>
-  <% end %>
+
 
     <% if current_user == @user %>
     <h3 class="mt-4">Pending requests</h3>
