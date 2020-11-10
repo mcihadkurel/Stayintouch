@@ -2,10 +2,12 @@
 <section class="user-section">
   <h2><%= "Name: #{@user.name}" %></h2>
   <article class="timeline">
+    <% if @user == current_user %>
     <h3>Recent posts:</h3>
     <ul class="posts">
       <%= render @posts %>
     </ul>
+    <% end %>
   </article>
 
    <% if @user != current_user %>
