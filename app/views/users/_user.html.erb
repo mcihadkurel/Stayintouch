@@ -8,13 +8,13 @@
 
     </span>
 
-      <% if requestSent(current_user, user) %>
-            <%= link_to "Accept", friendship_path(user.id), class: ["btn", "btn-primary"], method: :patch  %>
-            <%= link_to "Reject", friendship_path(user.id), class: ["btn", "btn-primary"], method: :delete  %>
-        <% elsif requestConfirmed(current_user, user) %>
+      <% if request_sent(current_user, user) %>
+            <%= link_to "Accept", friendship_path(user.id), class: ["btn", "btn-primary"], method: :patch %>
+            <%= link_to "Reject", friendship_path(user.id), class: ["btn", "btn-primary"], method: :delete %>
+        <% elsif request_confirmed(current_user, user) %>
           <%= link_to "Unfriend", friendship_path(user), class: ["btn", "btn-secondary"], method: :delete %>
-        <% elsif requestPending(current_user, user) %>
-          <%= content_tag(:p, 'pending acceptance') %>
+        <% elsif request_pending(current_user, user) %>
+          <%= content_tag(:p, "pending acceptance") %>
         <% else %>
           <%= link_to "Add Friend", friendships_path(friend_id: user.id), class: ["btn", "btn-primary"], method: :post %>
         <% end %>
