@@ -1,24 +1,19 @@
 # Stay In Touch
 
-### Milestone 2
+### Milestone 3
 
-> In this milestone we have created a friendship model and association between user and friend. Both user and friend referencing to same model (User).
+> In this milestone we have added a mutual friend feature.
 
-> User can send the friend request
+> Amita is friend with Muhammed
 
-> user can accept and reject the friend request
+> Oyeleke is friend with Muhammed
 
-> Current_user can see his/her pending requests
-
-> User can unfriend the friend
+> So Muhammed is the mutual friend between Amita and Oyeleke
 
 > Added test
 
-![screenshot](./app/assets/images/ss1.png)
-![screenshot](./app/assets/images/ss2.png)
-![screenshot](./app/assets/images/ss3.png)
-![screenshot](./app/assets/images/ss4.png)
-![screenshot](./app/assets/images/ss5.png)
+![screenshot](./app/assets/images/ssm-3.png)
+![screenshot](./app/assets/images/ss2m-3.png)
 
 ## Built With
 
