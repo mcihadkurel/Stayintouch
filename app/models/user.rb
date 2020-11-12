@@ -37,4 +37,12 @@ class User < ApplicationRecord
     friendships.create(friend_id(:user.id))
   end
 
+  def friend?(user)
+    friends.include?(user)
+  end
+
+  def friends_and_own_posts
+    Post.where(user: (self.friends + self))
+  end
+
 end
