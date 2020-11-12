@@ -12,9 +12,16 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    @friendship = Friendship.where(user_id: current_user, friend_id: params[:id])
-    @invert_friendship = Friendship.where(user: @friend, friend: current_user)
-    @friendship.destroy
-    @invert_friendship.destroy
+    @friendship = Friendship.find_by(user_id: current_user.id, friend_id: params[:user_id])
+    @invert_friendship = Friendship.find_by(user_id: params[:user_id], friend_id: current_user.id)
+
+    if @invert_friendship.nil?
+      @friendship.destroy
+      redirect_to request.referrer, notice: 'Cancelled the friendship'
+    else
+      @invert_friendship.destroy
+      @friendship.destroy
+      redirect_to request.referrer, notice: 'Unfriended the friend'
+    end
   end
 end
