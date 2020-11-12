@@ -2,19 +2,12 @@ class FriendshipsController < ApplicationController
   #   after_action :create_inverse_friendship,
 
   def create
-    friendship = current_user.friendships.new(friend_id: params[:friend_id], confirmed: true)
-    friendship.save
-    redirect_to users_path, notice: 'You have successfully sent a connection request'
-  end
+    @friendship = current_user.friendships.new(friend_id: params[:user_id])
 
-  def update
-    @friendship = Friendship.where(user_id: current_user.id, friend_id: params[:id], confirmed: false)
-    @friendship.update(confirmed: true)
-    redirect_to current_user
-  end
-
-  def destroy
-    Friendship.where(friend_id: params[:id], user_id: current_user.id).first.destroy
-    redirect_to users_path, notice: 'You have unfriended the friend successfully'
+    if @friendship.save
+      redirect_to users_path, notice: 'You sent a new invite.'
+    else
+      redirect_to users_path, alert: 'Something went wrong with the invite!'
+    end
   end
 end

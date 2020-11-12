@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
-    # timeline_posts
+    timeline_posts
   end
 
   def create
@@ -19,9 +19,9 @@ class PostsController < ApplicationController
 
   private
 
-  # def timeline_posts
-  #   @timeline_posts ||= current_user.all_posts.ordered_by_most_recent.includes(:user)
-  # end
+  def timeline_posts
+    @timeline_posts ||= current_user.friends_and_own_posts.ordered_by_most_recent.includes(:user)
+  end
 
   def post_params
     params.require(:post).permit(:content)
