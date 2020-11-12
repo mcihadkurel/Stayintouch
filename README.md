@@ -1,6 +1,10 @@
 # Stay In Touch
 
-### Milestone 3
+| [Milestone 1](https://github.com/mcihadkurel/Stayintouch/tree/milestone-1) | Entity Relationship Diagram (ERD) |
+
+| [Milestone 2](https://github.com/mcihadkurel/Stayintouch/tree/milestone-2) | Friendship v1 |
+
+### Milestone 3 (Friendship v2)
 
 > In this milestone we have added a mutual friend feature.
 
