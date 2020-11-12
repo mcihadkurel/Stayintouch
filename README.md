@@ -1,20 +1,39 @@
-# Scaffold for social media app with Ruby on Rails
+# Stay In Touch
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+| [Milestone 1](https://github.com/mcihadkurel/Stayintouch/tree/milestone-1) | Entity Relationship Diagram (ERD) |
+
+| [Milestone 2](https://github.com/mcihadkurel/Stayintouch/tree/milestone-2) | Friendship v1 |
+
+### Milestone 3 (Friendship v2)
+
+> In this milestone we have added a mutual friend feature.
+
+> Amita is friend with Muhammed
+
+> Oyeleke is friend with Muhammed
+
+> So Muhammed is the mutual friend between Amita and Oyeleke
+
+> Added test
+
+![screenshot](./app/assets/images/ssm-3.png)
+![screenshot](./app/assets/images/ss2m-3.png)
 
 ## Built With
 
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
+- Rspec
+- Capybara
+- rubocop
 
 ## Live Demo
 
 TBA
 
-
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple example steps.İnitial
 
 ### Prerequisites
 
@@ -46,7 +65,6 @@ To make sure the linters' checks using Github Actions work properly, you should 
 3. Start working on your milestone as usual.
 4. Open a PR from the `feature/branch` when your work is done.
 
-
 ### Usage
 
 Start server with:
@@ -59,11 +77,15 @@ Open `http://localhost:3000/` in your browser.
 
 ### Run tests
 
+> for test formatting add below script in .rspec file
+
 ```
     rpsec --format documentation
 ```
 
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
+> To run all the tests run below script in the terminal
+
+`rspec`
 
 ### Deployment
 
@@ -71,7 +93,17 @@ TBA
 
 ## Authors
 
-TBA
+👤 **Muhammed Cihad Kurel**
+
+- Github: [@mcihadkurel](https://github.com/mcihadkurel)
+- Twitter: [@mece_ka](https://twitter.com/mece_ka)
+- LinkedIn: [@muhammed](https://www.linkedin.com/in/muhammed-cihad-8187581a8/)
+
+👤 **Amita Roy**
+
+- Github: [@Amita](https://github.com/Amita-Roy)
+- Twitter: [@Amita](https://twitter.com/AmitaRoy14)
+- Linkedin: [@Amita](https://www.linkedin.com/in/amita-roy-3b823b68/)
 
 ## 🤝 Contributing
 
@@ -90,4 +122,3 @@ TBA
 ## 📝 License
 
 TBA
-
