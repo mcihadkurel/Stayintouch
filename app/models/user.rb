@@ -16,4 +16,17 @@ class User < ApplicationRecord
   has_many :pending_friends, through: :pending_friendships, source: :friend
   has_many :inverted_friendships, -> { where confirmed: false }, class_name: 'Friendship', foreign_key: 'friend_id'
   has_many :friend_requests, through: :inverted_friendships, source: :user
+
+  def confirm_friend(user)
+    friend = Friendship.find_by(user_id: user.id, friend_id: id)
+    friend.confirmed = true
+    friend.save
+    Friendship.create!(friend_id: user.id, user_id: id, confirmed: true)
+  end
+
+  def reject_request(user)
+    friendship = inverted_friendships.find { |f| f.user == user }
+    friendship.destroy
+  end
+
 end
