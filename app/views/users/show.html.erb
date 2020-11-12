@@ -10,39 +10,16 @@
     <% end %>
   </article>
 
-   <% if @user != current_user %>
-
-    <% if request_sent(current_user, @user) %>
-            <%= link_to "Accept", friendship_path(@user.id), class: ["btn", "btn-primary"], method: :patch %>
-            <%= link_to "Reject", friendship_path(@user.id), class: ["btn", "btn-primary"], method: :delete %>
-        <% elsif request_confirmed(current_user, @user) %>
-          <%= link_to "Unfriend", friendship_path(@user), class: ["btn", "btn-secondary"], method: :delete %>
-        <% elsif request_pending(current_user, @user) %>
-          <%= content_tag(:p, "pending acceptance") %>
-        <% else %>
-          <%= link_to "Add Friend", friendships_path(friend_id: @user.id), class: ["btn", "btn-primary"], method: :post %>
-        <% end %>
-    <% end %>
+   <%= accept_or_pending_btn(@user) %>
   
-  <h3 class="mt-4" >Friends</h3>
-  <% friends(@user) & friends(@user).each do |f| %>
-    <%= f.friend.name %>
+  <h3 class="mt-4" >Mutual Friends</h3>
+  <% if current_user != @user %>
+    <% mutual_friends(current_user, @user) & mutual_friends(current_user, @user).each do |f| %>
+      <p><%= f.name %></p>
+    <% end %>
   <% end %>
 
 
-
-    <% if current_user == @user %>
-    <h3 class="mt-4">Pending requests</h3>
-      <% @pending_requests & @pending_requests.each do |r| %>
-        <div class="mt-4">
-          <p><%= r.friend.name %></p>
-          <div class="mt-4">
-            <%= link_to "Accept", friendship_path(id: r.friend.id), class: ["btn", "btn-primary"], method: :patch %>
-            <%= link_to "Reject", friendship_path(id: r.friend.id), class: ["btn", "btn-secondary"], method: :delete %>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
 
    
   

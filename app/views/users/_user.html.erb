@@ -4,20 +4,13 @@
     Name: <%= user.name %>
     <span class="profile-link">
       <%= link_to "See Profile", user_path(user), class: "profile-link" %>
-
+      <%= link_to "Mutual Friends", user_path(user), class: "profile-link" %>
 
     </span>
 
-      <% if request_sent(current_user, user) %>
-            <%= link_to "Accept", friendship_path(user.id), class: ["btn", "btn-primary"], method: :patch %>
-            <%= link_to "Reject", friendship_path(user.id), class: ["btn", "btn-primary"], method: :delete %>
-        <% elsif request_confirmed(current_user, user) %>
-          <%= link_to "Unfriend", friendship_path(user), class: ["btn", "btn-secondary"], method: :delete %>
-        <% elsif request_pending(current_user, user) %>
-          <%= content_tag(:p, "pending acceptance") %>
-        <% else %>
-          <%= link_to "Add Friend", friendships_path(friend_id: user.id), class: ["btn", "btn-primary"], method: :post %>
-        <% end %>
+
+
+    <%= accept_or_pending_btn(user) %>
 
   </li> 
 <% end %>
