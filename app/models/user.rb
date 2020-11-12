@@ -29,4 +29,12 @@ class User < ApplicationRecord
     friendship.destroy
   end
 
+  def friend_with?(user)
+    Friendship.confirmed_record?(id, user.id)
+  end
+
+  def send_friendship(_user)
+    friendships.create(friend_id(:user.id))
+  end
+
 end
