@@ -10,4 +10,11 @@ class FriendshipsController < ApplicationController
       redirect_to users_path, alert: 'Something went wrong with the invite!'
     end
   end
+
+  def destroy
+    @friendship = Friendship.where(user_id: current_user, friend_id: params[:id])
+    @invert_friendship = Friendship.where(user: @friend, friend: current_user)
+    @friendship.destroy
+    @invert_friendship.destroy
+  end
 end

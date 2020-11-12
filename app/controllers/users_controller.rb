@@ -22,7 +22,6 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:user_id])
-
     if current_user.reject_request(@user)
       redirect_to users_path, notice: 'Friendship request rejected successfully.'
     else
