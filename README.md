@@ -92,7 +92,7 @@ Open `http://localhost:3000/` in your browser.
 
 - Create an account in heroku;
 - Inside the project folder run heroku create
-- Push the code to heroku git push heroku main
+- Push the code to heroku git push heroku master
 - Migrate your database heroku run rake db:migrateVisit your application heroku open
 
 TBA
