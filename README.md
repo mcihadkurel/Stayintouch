@@ -21,15 +21,16 @@
 
 ## Built With
 
-- Ruby v2.7.0
+- Ruby v2.7.2
 - Ruby on Rails v5.2.4
 - Rspec
 - Capybara
 - rubocop
+- heroku
 
 ## Live Demo
+https://touchinstay.herokuapp.com/
 
-TBA
 
 ## Getting Started
 
@@ -37,7 +38,7 @@ To get a local copy up and running follow these simple example steps.İnitial
 
 ### Prerequisites
 
-Ruby: 2.6.3
+Ruby: 2.7.2
 Rails: 5.2.3
 Postgres: >=9.5
 
@@ -88,6 +89,11 @@ Open `http://localhost:3000/` in your browser.
 `rspec`
 
 ### Deployment
+
+- Create an account in heroku;
+- Inside the project folder run heroku create
+- Push the code to heroku git push heroku main
+- Migrate your database heroku run rake db:migrateVisit your application heroku open
 
 TBA
 
