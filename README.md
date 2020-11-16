@@ -29,8 +29,8 @@
 - heroku
 
 ## Live Demo
-https://touchinstay.herokuapp.com/
 
+[Stay In Touch](https://touchinstay.herokuapp.com/)
 
 ## Getting Started
 
