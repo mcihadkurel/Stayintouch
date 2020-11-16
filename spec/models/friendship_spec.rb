@@ -14,7 +14,7 @@ RSpec.describe Friendship, type: :model do
 
     it 'increased the count of friendships' do
       Friendship.create(user: @user1, friend: @user2, confirmed: true)
-      expect(Friendship.count).to eq 3
+      expect(Friendship.count).to eq 2
     end
   end
 

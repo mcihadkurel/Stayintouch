@@ -30,7 +30,7 @@ RSpec.describe 'Friendship', type: :request do
     end
 
     it 'create friendship' do
-      post friendships_url, params: { friendship: { user: @user, friend: @user2, confirmed: true } }
+      post invite_path, params: { friendship: { user: @user, friend: @user2, confirmed: true } }
       redirect_to users_path
     end
   end
